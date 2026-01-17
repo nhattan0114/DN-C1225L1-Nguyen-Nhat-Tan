@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BasicForm</title>
+    <link rel="stylesheet" href="styleindex.css">
+</head>
+<body>
+<h1>Form Khảo Sát</h1>
+<label  for="name">Họ và tên:</label><input id="name"><br>
+<label for="email">Email:</label><input id="email" required><br>
+<label for="hobby">Sở thích:</label><input id="hobby"><br>
+<label for="style">Phong cách ăn mặc:</label><input id="style"><br>
+<label for="brand">Brand ưa thích:</label><input id="brand"><br>
+<label for="price">Số tiền có thể chi để mua quần áo:</label><input id="price"><br>
+
+    <label>Nghề Nghiệp:
+        <select>
+            <option>Học sinh,sinh viên </option>
+            <option>Công nhân viên chức </option>
+            <option>Công Nhân </option>
+            <option> Lao động tự do</option>
+        </select>
+    </label><br>
+<label for="salary">Lương:</label><input id="salary"><br>
+<label for="feedback">Phản hôì:</label><br>
+<textarea id ="feedback" rows="4" cols="50"></textarea><br>
+
+<button id="submit">Gửi form</button>
+
+<script>
+    document.getElementById("submit").addEventListener('click', function() {
+
+        this.style.backgroundColor = "green";
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const hobby = document.getElementById("hobby").value;
+        const style = document.getElementById("style").value;
+        const brand = document.getElementById("brand").value;
+        const price = document.getElementById("price").value;
+        const salary = document.getElementById("salary").value;
+        const feedback = document.getElementById("feedback").value;
+
+        // Lấy giá trị từ thẻ select (Nghề nghiệp)
+        const job = document.querySelector("select").value;
+
+        // Tạo nội dung thông báo
+        const message = `Thông tin đã nhập:
+        - Họ và tên: ${name}
+        - Email: ${email}
+        - Sở thích: ${hobby}
+        - Phong cách: ${style}
+        - Brand ưa thích: ${brand}
+        - Số tiền chi tiêu: ${price}
+        - Nghề nghiệp: ${job}
+        - Lương: ${salary}
+        - Phản hồi: ${feedback}`;
+
+        // Hiển thị thông báo
+        alert(message);
+    });
+</script>
+</body>
+</html>
