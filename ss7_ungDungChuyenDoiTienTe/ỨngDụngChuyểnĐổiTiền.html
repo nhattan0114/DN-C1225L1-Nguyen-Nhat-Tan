@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web chuyển đổi tiền tệ</title>
+    <link rel="stylesheet" href="styleindex.css">
+
+</head>
+<body>
+<h2>Menu</h2>
+<label for="amount">Amount</label>
+<label for="FromCurrency">FromCurrency</label>
+<label for="ToCurrency">ToCurrency</label><br>
+<input  id="amount">
+<select id="FromCurrency">
+    <option>VND</option>
+    <option>USD</option>
+</select>
+<select id="ToCurrency">
+    <option>VND</option>
+    <option>USD</option>
+</select>
+<button id="convert">Convert</button>
+<p id="result" style="color: blue;">Result: </p>
+
+<script>
+    document.getElementById("convert").addEventListener("click",function (){
+
+        let amount= Number(document.getElementById("amount").value);
+        let FromCurrency =document.querySelector("#FromCurrency").value;
+        let ToCurrency= document.querySelector("#ToCurrency").value;
+        let result;
+        if(FromCurrency ==="USD"&&ToCurrency ==="VND"){
+            result = amount *26295;
+        }
+        else if (FromCurrency==="VND"&&ToCurrency ==="USD"){
+             result = amount / 26295;
+        }
+        else{
+            result=amount;
+        }
+        document.getElementById("result").innerText = "Result: "+result.toFixed(2)+" "+ToCurrency;
+
+
+
+
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+label{
+    padding: 1px;
+    margin-right: 215px;
+    /*background-color: red;*/
+    color: purple;
+}
+h2{
+    text-align: center;
+    background-color: lightpink;
+    color:green;
+}
+input{
+    border-radius: 3px;
+    padding: 5px;
+    margin-right: 98px;
+}
+select{
+    border-radius: 3px;
+    padding: 5px 30px;
+    margin-right: 180px;
+}
+button{
+    color: white;
+    border-radius: 3px;
+    padding: 10px 25px;
+    background-color: mediumpurple;
+
+}
