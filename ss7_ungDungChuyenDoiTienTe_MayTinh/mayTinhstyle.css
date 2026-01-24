@@ -1,0 +1,23 @@
+input{
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+}
+button{
+    padding: 7px;
+    margin-left: 15px;
+}
+p{
+    border: 1px solid black;
+    margin-right: 430px;
+    margin-left: 15px;
+    padding: 10px;
+}
+h2{
+    margin-left: 15px;
+}
+body{
+    border: 1px solid black;
+    margin-right: 200px;
+
+}
