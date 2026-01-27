@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01</title>
+</head>
+<body>
+<label for="no1" style="padding: 5px">Nhập a:</label><input id ="no1" style="margin: 5px"><br>
+<label for="no2" style="padding: 5px">Nhập b</label><input id="no2" style="margin: 5px" ><br>
+<button id="check">Kiểm tra</button>
+<p id="result">Result:</p>
+<script>
+    document.getElementById("check").addEventListener("click",function (){
+        let a= +document.getElementById("no1").value;
+        let b= +document.getElementById("no2").value;
+        if(b!==0){
+            if(a%b===0){
+                document.getElementById("result").innerText=`Result: ${a} chia hết cho ${b}`
+            }
+            else{
+                document.getElementById("result").innerText=`Result: ${a} không chia hết cho ${b}`
+            }
+        }
+        else{
+            document.getElementById("result").innerText=`Result: không thể chia với 0`
+        }
+
+    })
+</script>
+</body>
+</html>
