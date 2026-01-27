@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02</title>
+</head>
+<body>
+<h2>Kiểm tra học sinh có đủ điều kiện vào lớp 10 (tuổi)</h2>
+<label for="age">Nhập tuổi:</label><input id="age" style="padding: 3px;margin-left: 3px"><br>
+<button id="check" style="margin-top: 10px;padding: 5px">Kiểm tra</button>
+<p id="result">Result: </p>
+
+<script>
+
+  document.getElementById("check").addEventListener("click",function (){
+    let age = document.getElementById("age").value;
+    if(age!==0&& age>0){
+      if(age>=16){
+        document.getElementById("result").innerText=`Result: ${age} tuổi đủ điều kiện lên lớp 10`
+      }
+      else{
+        document.getElementById("result").innerText=`Result: ${age} tuổi không đủ điều kiện lên lớp 10`
+
+      }
+    }
+    else{
+      document.getElementById("result").innerText=`Result: Nhập tuổi khác không và là số dương`
+
+    }
+  })
+
+
+
+</script>
+</body>
+</html>
