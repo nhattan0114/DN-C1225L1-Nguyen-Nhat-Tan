@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05</title>
+</head>
+<body>
+<h2>Xếp loại học lực của học sinh</h2>
+<label for="mark">Nhập điểm:</label><input id="mark" style="margin-left: 3px"><br>
+<button id="check" style="padding: 5px;margin-top: 10px">Kiểm tra</button>
+<p id="result">Result: </p>
+
+<script>
+  document.getElementById("check").addEventListener("click",function () {
+
+    let mark=document.getElementById("mark").value;
+
+    if(mark>=0&&mark<=10){
+      if(mark<=3.5){
+        document.getElementById("result").innerText=`Result: kém (${mark})`
+      }
+      else if(mark<=5){
+        document.getElementById("result").innerText=`Result: Trung bình (${mark})`
+      }
+      else if(mark<8){
+        document.getElementById("result").innerText=`Result: Khá (${mark})`
+      }
+      else{
+        document.getElementById("result").innerText=`Result: Giỏi (${mark})`
+      }
+    }
+    else{
+      document.getElementById("result").innerText=`Result: Có gì đó sai.`
+    }
+  })
+</script>
+</body>
+</html>
