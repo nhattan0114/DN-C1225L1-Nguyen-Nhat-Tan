@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06</title>
+</head>
+<body>
+<h2>Tính hoa hồng nhận được theo bậc doanh số</h2>
+<label for="doanhThu">Nhập Doanh thu: </label><input id="doanhThu" style="padding: 5px;margin-left: 5px"><br>
+<button id="tinh" style="padding: 5px;margin-top: 10px">Tính hoa hồng</button>
+<p id="result">Kết quả:</p>
+
+<script>
+    document.getElementById("tinh").addEventListener("click",function () {
+        let doanhThu=document.getElementById("doanhThu").value;
+        let hoaHong=0;
+        let tienHoaHong=0;
+        if(doanhThu<10000000){
+            hoaHong=3/100;
+            tienHoaHong=doanhThu*hoaHong;
+        }
+        else if(doanhThu>=10000000&&doanhThu<=20000000){
+            hoaHong=5/100;
+            tienHoaHong=doanhThu*hoaHong;
+        }
+        else if(doanhThu>2000000){
+            hoaHong=7/100;
+            tienHoaHong=doanhThu*hoaHong;
+        }
+        else{
+            document.getElementById("result").innerText=`Doanh thu phải lơn hơn 0 và không âm`
+        }
+        document.getElementById("result").innerText=`Result: ${tienHoaHong} tiền hoa hồng.`
+    })
+</script>
+</body>
+</html>
