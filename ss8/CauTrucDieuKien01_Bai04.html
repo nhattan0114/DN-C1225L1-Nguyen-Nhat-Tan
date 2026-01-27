@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04</title>
+</head>
+<body>
+<h2>Tìm số lớn nhất trong 3 số</h2>
+<label for="no1">Nhập a:</label><input id="no1" style="padding: 3px;margin-left: 5px">
+<label for="no2">Nhập b:</label><input id="no2" style="padding: 3px;margin-left: 5px">
+<label for="no3">Nhập c:</label><input id="no3" style="padding: 3px;margin-left: 5px">
+<button id="check" style="padding: 8px;margin-top: 10px">Kiểm tra</button>
+<p id="result">Result:</p>
+<script>
+  document.getElementById("check").addEventListener("click",function (){
+    let a=document.getElementById("no1").value;
+    let b=document.getElementById("no2").value;
+    let c=document.getElementById("no3").value;
+
+    let max=a;
+    if(max<b){
+      max=b;
+      document.getElementById("result").innerText=`Result: ${max} là số lớn nhất.`
+    }
+    else if(max<c){
+      max=c;
+      document.getElementById("result").innerText=`Result: ${max} là số lớn nhất.`
+    }
+    else{
+      document.getElementById("result").innerText=`Result: ${max} là số lớn nhất.`
+    }
+
+  })
+
+
+
+</script>
+</body>
+</html>
