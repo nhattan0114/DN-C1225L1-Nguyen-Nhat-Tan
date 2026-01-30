@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06</title>
+</head>
+<body>
+<h2>Giải phương trình bậc 1</h2>
+<label for="a">Nhập cạnh a:</label><input id="a"><br>
+<label for="b">Nhập cạnh b:</label><input id="b"><br>
+<label for="y">Nhập cạnh y:</label><input id="y"><br>
+<button id="check">Tính</button><br>
+<p id="result">Kết quả:</p>
+<script>
+    document.getElementById("check").addEventListener("click",function (){
+
+        let a =parseFloat(document.getElementById("a").value);
+        let b =parseFloat(document.getElementById("b").value);
+        let y =parseFloat(document.getElementById("y").value);
+
+        let x=(y-b)/a;
+        document.getElementById("result").innerText=`Kết quả x: ${x.toFixed(2)}`
+
+    })
+</script>
+</body>
+</html>
