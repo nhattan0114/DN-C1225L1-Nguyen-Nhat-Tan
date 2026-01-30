@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03</title>
+</head>
+<body>
+<h2>Tính diện tích hình vuông</h2>
+<label for="canh">Nhập cạnh:</label><input id="canh"><br>
+<button id="check">Tính</button><br>
+
+
+<p id="result">Result: </p>
+<script>
+    document.getElementById("check").addEventListener("click",function (){
+
+        let a =document.getElementById("canh").value;
+
+        let s=a*a;
+
+        document.getElementById("result").innerText=`Diện tích hình vuông có cạnh ${a}: ${s.toFixed(2)}`
+
+    })
+</script>
+
+</body>
+</html>
