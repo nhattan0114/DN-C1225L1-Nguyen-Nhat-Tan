@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04</title>
+</head>
+<body>
+<h2>Tính diện tích hình chữ nhật</h2>
+<label for="dai">Nhập cạnh a:</label><input id="dai"><br>
+<label for="rong">Nhập cạnh b:</label><input id="rong"><br>
+<button id="check">Tính</button><br>
+
+
+<p id="result">Diện tích: </p>
+<script>
+    document.getElementById("check").addEventListener("click",function (){
+
+        let a =document.getElementById("dai").value;
+        let b =document.getElementById("rong").value;
+
+        let s=a*b;
+
+        document.getElementById("result").innerText=`Diện tích hình chữ nhật: ${s.toFixed(2)}`
+
+    })
+</script>
+
+</body>
+</html>
