@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10</title>
+</head>
+<body>
+<h2>Tính tiền điện sinh hoạt</h2>
+<label for="kwh">Nhập Kwh: </label><input id="kwh"><br>
+<button id="check">Tính tiền</button><br>
+<p id="result">Tồng tiền điện:</p><br>
+
+<script>
+  document.getElementById("check").addEventListener("click",function () {
+    let kwh=+document.getElementById("kwh").value;
+    let tienDien;
+
+    if(kwh>0&&kwh<=50){
+      tienDien=kwh*1678;
+    }
+    else if(kwh<=100){
+      tienDien=50*1678+(kwh-50)*1734;
+
+    }
+    else if(kwh<=200){
+      tienDien=50*1678+50*1734+(kwh-100)*2014;
+    }
+    else if(kwh<=300){
+      tienDien=50*1678+50*1734+100*2014+(kwh-200)*2536;
+    }
+    else if(kwh>=301&&kwh<=400){
+      tienDien=50*1678+50*1734+100*2014+100*2536+(kwh-300)*2834;
+    }
+    else{
+      tienDien=50*1678+50*1734+100*2014+100*2536+100*2834+(kwh-400)*2927;
+    }
+    document.getElementById("result").innerText=` Tổng tiền điện:${tienDien} VND`;
+
+  })
+</script>
+</body>
+</html>
