@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12</title>
+</head>
+<body>
+
+<script>
+    let money=+prompt("Nhập số tiền muốn gửi :");
+    let months=+prompt("Nhập thời hạn(tháng): ");
+    let rate =0.1;
+    let totalMoney=money;
+    for(let i=1;i<=months;i++){
+        totalMoney=totalMoney+totalMoney*rate;
+    }
+
+    alert("Số tiền ban đầu:"+money);
+    alert("Số tiền sau "+months+"tháng"+totalMoney)
+    alert("Tiền lãi:"+(totalMoney-money));
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
