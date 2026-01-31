@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>08</title>
+</head>
+<body>
+<h2>Kiểm tra tuổi</h2>
+<label for="age">Nhập tuổi: </label><input id="age"><br>
+<button id="check">Kiểm tra: </button><br>
+
+<p id="result">Kết quả: </p>
+<script>
+    document.getElementById("check").addEventListener("click",function (){
+
+        let age=document.getElementById("age").value;
+        if(age>0&&age<120){
+            document.getElementById("result").innerText=`Kết quả: ${age} là tuổi của một người`
+        }
+        else{
+            document.getElementById("result").innerText=`Kết quả: ${age} không phải tuổi của một người`
+        }
+
+    })
+</script>
+</body>
+</html>
