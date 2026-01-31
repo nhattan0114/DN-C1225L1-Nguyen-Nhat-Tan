@@ -20,21 +20,21 @@
         let c =parseFloat(document.getElementById("c").value);
         // let y =parseFloat(document.getElementById("y").value);
 
-        let denta=Math.pow(b,2)-4*a*c;
+        let denta=(Math.pow(b,2))-4*a*c;
 
         if(denta<0){
             document.getElementById("result").innerText=`Kết quả: Phương trình vô nghiệm`
         }
         else if(denta>0){
-            let x1=(-b+Math.sqrt(denta))/2*a;
-            let x2=  (-b-Math.sqrt(denta))/2*a;
+            let x1=(-b+(Math.sqrt(denta)))/(2*a);
+            let x2=  (-b-(Math.sqrt(denta)))/(2*a);
             document.getElementById("result").innerText=`Kết quả: Phương trình có 2 nghiệm phân biệt:
               \n x1=${x1}\n x2=${x2} `
         }
         else if(denta===0){
             let x1=-b/2*a;
             let x2=-b/2*a;
-            document.getElementById("result").innerText=`Kết quả: Phương trình có nghiệm kép:/n x1=${x1}/nx2=${x2}`
+            document.getElementById("result").innerText=`Kết quả: Phương trình có nghiệm kép:\n x1=x2=${x2}`
         }
 
 
