@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11</title>
+</head>
+<body>
+<h2>Tính thuế thu nhập cá nhân</h2>
+<p>Thu nhập chịu thuế = tổng thu nhập-(giảm trừ cá nhân)-(số người phụ thuộc *4.400.000)</p><br>
+<label for="income">Thu nhập chịu thuế: </label><input id="income"><br>
+<!--<label for="dependents">Số người phụ thuộc: </label><input id="dependents"><br>-->
+<button id="check">Tính</button><br>
+<p id ="result">Kết quả: </p><br>
+<script>
+
+    document.getElementById("check").addEventListener("click",function () {
+        let income = +document.getElementById("income").value;
+        // let dependents=document.getElementById("dependents").value;
+        // let taxAbleIncome=income - 11000000-(dependents*4400000);
+        let tax;
+
+        if(income<=0){
+            document.getElementById("result").innerText=`Kết quả: Không phải đóng thuế `
+        }
+        else {
+            if (income <= 5000000) {
+                tax = income * 5 / 100;
+            } else if (income <= 10000000) {
+                tax = (5000000 * 5 / 100) + ((income - 5000000) * 10 / 100);
+            } else if (income <= 18000000) {
+                tax = (5000000 * 5 / 100) + (5000000 * 10 / 100) + ((income - 10000000) * 15 / 100);
+            } else if (income <= 32000000) {
+                tax = (5000000 * 5 / 100) + (5000000 * 10 / 100) + (8000000 * 15 / 100) + ((income - 18000000) * 20 / 100);
+            } else if (income <<= 52000000) {
+                tax = (5000000 * 5 / 100) + (5000000 * 10 / 100) + (8000000 * 15 / 100) + (14000000 * 20 / 100) + ((income - 32000000) * 25 / 100);
+            }else if(income<=80000000){
+                tax = (5000000 * 5 / 100) + (5000000 * 10 / 100) + (8000000 * 15 / 100) + (14000000 * 20 / 100) + (20000000*25/100)+((income - 52000000) * 30 / 100);
+            }else if(income>80000000){
+                tax = (5000000 * 5 / 100) + (5000000 * 10 / 100) + (8000000 * 15 / 100) + (14000000 * 20 / 100) + (20000000*25/100)+(28000000*30/100)+((income - 80000000) * 35 / 100);
+
+            }
+
+        }
+        document.getElementById("result").innerText=`Thu nhập chịu thuế: ${income} VND\n Thuế phải đóng: ${tax} VND`
+
+    })
+</script>
+
+</body>
+</html>
