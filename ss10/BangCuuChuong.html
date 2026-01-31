@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let result = "<table style='border: 1px solid black'>";
+  for(let i =1;i<=9;i++){
+    result+="<tr >";
+    for (let j =2;j<=9;j++){
+      result+="<td style='border: 1px solid black'>"+j+"x"+i+"="+(i*j)+"</td>";
+    }
+    result+="</tr>";
+
+
+  }
+  result+="</table>";
+  document.writeln(result);
+
+
+
+
+</script>
+</body>
+</html>
