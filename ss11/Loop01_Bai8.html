@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>08</title>
+</head>
+<body>
+<h2 style="text-align: center">Trò chơi đoán số </h2>
+<p>Nhấn vào nút để bắt đầu trò chơi:</p>
+<button onclick="troChoi()" style="margin-left: 100px">Bắt đầu</button><br>
+
+<script>
+    function troChoi() {
+            let count=0;
+            let num=+prompt("Nhập phạm vi số bạn muốn đoán(từ 1 đến n): ")
+            let randomNum=Math.floor(Math.random()* num)+1
+            alert("Bạn có 3 lần đoán!Chúc may mắn")
+            do{
+                let choice=+prompt("Nhập số bạn đoán: ")
+                count++
+                if(choice===randomNum){
+                    alert("Chúc mừng bạn đã đoán đúng("+randomNum+")\n"+"Số lần đoán:"+count)
+                    break;
+                }
+                else if(choice<randomNum){
+                    alert("Số bạn đoán nhỏ hơn.")
+                }
+                else{
+                    alert("Số bạn đoạn lớn hơn")
+                }
+                if(count===3){
+                    alert("Bạn đã hết số lần đoán.Vui lòng thử lại ")
+                    alert("Số đoán:"+randomNum)
+                }
+
+
+
+            }while (count<3)
+
+    }
+
+</script>
+
+
+
+</body>
+</html>
