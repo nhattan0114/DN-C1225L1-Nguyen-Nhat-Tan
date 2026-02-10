@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02</title>
+</head>
+<body>
+<script>
+  let a=[1,7,3,6,5,9,12,21,100,24]
+  let max=a[0]
+  let pos=0
+  for (let i = 1; i < a.length; i++) {
+      if(max<a[i]) {
+        max = a[i]
+        pos=i
+      }
+
+  }
+  document.writeln("Max: "+max+"<br>"+"Tại vị trí: "+pos+"<br>")
+
+</script>
+</body>
+</html>
