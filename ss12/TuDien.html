@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TuDien</title>
+</head>
+<body>
+<label for="nhap"> Nhập từ: </label><input id="nhap">
+<button onclick="ChayChuongTrinh()">Tìm kiếm:</button><br>
+<script>
+    function ChayChuongTrinh() {
+        let nhap = document.getElementById("nhap").value
+        let VietNameseWord=["bánh","siêu thị","xe đạp","sinh nhật","trường học"]
+        let EngLishWord=["cake","supermarket","bicycle","birthday","school"]
+        for(let i = 0; i < VietNameseWord.length; i++) {
+                if(nhap.toLowerCase()===VietNameseWord[i].toLowerCase()){
+                    document.writeln("Từ bạn nhập: "+VietNameseWord[i]+"<br>")
+                    document.writeln("Từ tiếng anh tương ứng: "+EngLishWord[i]+"<br>")
+                    return;
+                }
+
+        }
+        document.writeln("Không tìm thấy ")
+    }
+</script>
+</body>
+</html>
