@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07</title>
+</head>
+<body>
+<script>
+    function run(){
+        let a=new Array(10)
+        for (let i = 0; i <a.length ; i++) {
+            a[i]=Math.floor(Math.random()*10)+1
+        }
+        document.writeln("Mảng: "+a.join(",")+"<br>")
+        let input=+prompt("INPUT: ")
+        let found=false
+        for (let i = 0; i < a.length; i++) {
+            if (input===a[i]){
+                found=true
+                for (let j = i; j < a.length-1; j++) {
+                    a[j]=a[j+1]
+                }
+                a[a.length-1]=0
+                break;
+            }
+        }
+        if (found) {
+            document.writeln("Sau khi xóa: " + a.join(", "));
+        } else {
+            document.writeln(input + " không thuộc mảng");
+        }
+    }
+    run()
+
+</script>
+</body>
+</html>
