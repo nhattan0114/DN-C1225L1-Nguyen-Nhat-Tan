@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03</title>
+</head>
+<body>
+<script>
+  let a= new Array(15)
+  for (let i = 0; i < a.length; i++) {
+    a[i]=Math.floor(Math.random()*30)+1
+  }
+  let max=a[0]
+  let total=a[0]
+  for (let i = 1; i < a.length; i++) {
+    if (max<a[i]){
+      max=a[i]
+    }
+    total+=a[i]
+  }
+  document.writeln("Max: "+max+"<br>")
+  document.writeln("AVG:"+(total/15).toFixed(2)+"<br>")
+
+
+
+
+</script>
+</body>
+</html>
