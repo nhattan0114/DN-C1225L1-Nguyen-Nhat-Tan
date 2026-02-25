@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09</title>
+</head>
+<body>
+<script>
+    function run() {
+        let b = new Array(10)
+        for (let i = 0; i <b.length; i++) {
+            b[i]=Math.floor(Math.random()*30)+1
+        }
+        document.writeln("Mang A: "+b.join(",")+"<br>")
+
+        let a = new Array(10);
+        for (let i = 0; i <a.length; i++) {
+            a[i]=Math.floor(Math.random()*30)+1
+        }
+        document.writeln("Mang B: "+a.join(",")+"<br>")
+
+        let c = new Array(20)
+       // c= a.concat(b)//noi mang ko thay doi mang a,b ->a
+        c=b.concat(a)//a->b
+        document.writeln("Mang C:"+c.join(","))
+    }
+run()
+
+
+</script>
+</body>
+</html>
