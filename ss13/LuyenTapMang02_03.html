@@ -10,11 +10,15 @@
     let a=['h','e','l','1','o','w','0','r','l','d','11','1']
     document.writeln("length: "+a.length+"<br>")
     document.writeln("Mang:"+a.join(","))
+    let count=0
     for (let item of a) {
       if (!isNaN(item)){
         document.writeln(item+"<br>")
+        count++
       }
-
+    }
+    if (count===0){
+      document.writeln("Khong co so trong mang")
     }
   }
   run()
