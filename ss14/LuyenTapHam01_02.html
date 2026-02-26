@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02</title>
+</head>
+<body>
+<label for="input">Nhập số: </label><input id="input"><br>
+<button onclick="display()">Thêm 1</button>
+<p id="result">Kết quả: </p><br>
+<script>
+  function Add(n) {
+    return n+1
+  }
+  function display(){
+    let num=Add(+document.getElementById("input").value)
+    document.getElementById("result").innerText=`Kết quả: ${num} `
+  }
+</script>
+</body>
+</html>
