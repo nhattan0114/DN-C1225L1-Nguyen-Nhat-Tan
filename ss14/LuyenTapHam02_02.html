@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02</title>
+</head>
+<body>
+<label for="banKinh">Nhập r: </label><input id="banKinh"><br>
+<button onclick="showC()" style="margin-top: 5px">Tính chu vi</button><br>
+<button onclick="showS()" style="margin-top: 5px">Tính diện tích</button><br>
+<p id="result"></p>
+<script>
+
+  function getRadius() {
+    let r = +document.getElementById("banKinh").value;
+    if (r <= 0 || isNaN(r)) {
+      alert("Vui lòng nhập bán kính hợp lệ (>0)");
+      return null;
+    }
+    return r;
+  }
+function TinhChuVi(r) {
+  return  2*r*Math.PI
+
+}
+
+function TinhDienTich(r) {
+  return Math.pow(r,2)*Math.PI
+}
+ function showS(){
+    let r=getRadius()
+   if (r===null) return
+   let result=TinhDienTich(r)
+   document.getElementById("result").innerText="Diện tích hình tròn:"+result.toFixed(2)
+
+ }
+function showC() {
+    let r=getRadius()
+  if (r===null) return
+  let result=TinhChuVi(r)
+  document.getElementById("result").innerText="Chu vi hình tròn:"+result.toFixed(2)
+
+}
+
+</script>
+</body>
+</html>
