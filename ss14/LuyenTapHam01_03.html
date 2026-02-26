@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03</title>
+</head>
+<body>
+<label for="input1">Nhập số thứ nhất:</label><input id="input1"><br>
+<label for="input2">Nhập số thứ hai:</label><input id="input2"><br>
+
+<button onclick="show()">Run</button>
+<script>
+  function run(a,b) {
+    if (a>b){
+      alert("Số thứ nhất phải bé hơn số thứ 2 ")
+    }
+    else{
+      alert("Tổng "+a+"+"+b+"="+(a+b))
+    }
+  }
+  function show(){
+    let a=+document.getElementById("input1").value
+    let b =+document.getElementById("input2").value
+    run(a,b)
+  }
+</script>
+</body>
+</html>
