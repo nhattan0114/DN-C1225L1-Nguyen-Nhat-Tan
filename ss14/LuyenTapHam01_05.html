@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05</title>
+</head>
+<body>
+<script>
+  
+  let cacNgoiSao=["Polaris","Aldebaran","Deneb","Vega","Altair","Dubhe","Regulus"]
+  let cacChomSao=["Ursa Minor","Taurus","Cygnus","Lyra","Aquila","Ursa Major","Leo"]
+  
+  function CheckSao(tenNgoiSao) {
+    for (let i = 0; i <cacNgoiSao.length ; i++) {
+          if (cacNgoiSao[i].toLowerCase()===tenNgoiSao.toLowerCase()){
+            return cacChomSao[i]
+          }
+    }
+    return "Không tìm thấy ngôi sao!"
+  }
+
+  let tenNgoiSao=prompt("Nhập tên ngôi sao: ")
+  let ketqua=CheckSao(tenNgoiSao)
+  document.writeln("Chòm sao tương ứng:"+ketqua)
+
+</script>
+</body>
+</html>
