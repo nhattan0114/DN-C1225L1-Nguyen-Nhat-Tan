@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06</title>
+</head>
+<body>
+<script>
+    function run() {
+
+        let arr=prompt("Nhập chuỗi: ").split("")//split("") tach tu ki tu trong chuoi thanh mang
+        alert("Chuong trinh se thay the '-' thanh '_'")
+       // arr =arr.replaceAll('-','_') arr.replace se tao chuoi moi(test)
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i]==="-"){
+                arr[i]= "_"
+            }
+        }
+        document.writeln(arr.join("")+"<br>")
+
+
+    }
+    run()
+
+</script>
+</body>
+</html>
