@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06</title>
+</head>
+<body>
+<script>
+    function KtraSoNguyenDuong(n) {
+        return (Number.isInteger(n) && n > 0);
+    }
+
+    let input=+prompt("nhập số:")
+    if (KtraSoNguyenDuong(input)){
+        document.writeln("result:"+true)
+    }
+    else{
+        document.writeln("result:"+false)
+    }
+</script>
+</body>
+</html>
