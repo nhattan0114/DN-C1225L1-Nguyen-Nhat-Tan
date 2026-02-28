@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04</title>
+</head>
+<body>
+<script>
+    function checkNum(n) {
+        if(isNaN(n)){
+            return false
+        }
+        else{
+            return  true
+        }
+    }
+    let input=prompt("Nhập :")
+    let check=checkNum(input)
+    if (check){
+        document.writeln("result:"+true)
+    }
+    else
+    {
+        document.writeln("result:"+false)
+    }
+</script>
+</body>
+</html>
