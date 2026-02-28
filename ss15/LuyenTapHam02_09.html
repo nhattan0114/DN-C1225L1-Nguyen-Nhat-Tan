@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09</title>
+</head>
+<body>
+<script>
+  function timKiTu(arr,target) {
+    let count=0
+    for (let i = 0; i < arr.length; i++) {
+      if(target.toLowerCase()===arr[i].toLowerCase()){
+        count++
+      }
+    }
+    if(count===0){
+      return -1
+    }
+    return count
+  }
+
+
+  let arr=prompt("Nhập mảng: ")
+  arr=arr.split("")
+  let target=prompt("Nhập kí tự muốn tìm: ")
+  document.writeln(timKiTu(arr,target))
+
+
+</script>
+</body>
+</html>
