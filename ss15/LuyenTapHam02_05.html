@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05</title>
+</head>
+<body>
+<p id="result">Kết quả: </p><br>
+<script>
+  function findMin(a,b,c) {
+    let min =a
+    if (min>b){
+        min=b
+    }else if(min>c){
+      min=c
+    }
+    return min
+  }
+
+  let a=+prompt("nhap no1:")
+  let b=+prompt("nhap no2:")
+  let c=+prompt("nhap no3:")
+  let min = findMin(a,b,c)
+  document.getElementById("result").innerHTML=`Min: ${min}`
+</script>
+</body>
+</html>
