@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cai4</title>
+  <link rel="stylesheet" href="styleindex.css">
+</head>
+<body>
+<p style="text-align: center; font-size: larger"> Quản lí công nhân</p>
+<p id="result"></p><br>
+<script>
+
+  class CongNhan{
+    STT;
+    HoVaTen;
+    NgaySinh;
+    DiaChi;
+    Luong;
+    ChucVu;
+
+    constructor(stt,ten,ngaysinh,diachi,luong,chucvu) {
+      this.STT=stt
+      this.HoVaTen=ten
+      this.NgaySinh=ngaysinh
+      this.DiaChi=diachi
+      this.Luong=luong
+      this.ChucVu=chucvu
+    }
+  }
+  let congnhan1= new CongNhan(3,"Trương Tấn C","11-11-1997","Huế",2000,"Abc")
+  let congnhan2= new CongNhan(1,"Trương Tấn A","11-11-1998","Quảng Nam",2000,"Abc")
+  let congnhan3= new CongNhan(2,"Trương Tấn B","11-11-1999","Đà Nẵng",2000,"Abc")
+  let danhSachCN =[]
+  danhSachCN.push(congnhan1)
+  danhSachCN.push(congnhan2)
+  danhSachCN.push(congnhan3)
+
+  function displayTable() {
+    danhSachCN.sort(((a, b)=>a.HoVaTen.localeCompare(b.HoVaTen)))
+    let board ="<table>"
+    board +="<tr>"+
+            "<th>STT</th>"+
+            "<th>Họ và tên</th>"+
+            "<th>Ngày sinh</th>"+
+            "<th>Địa chỉ</th>"+
+            "<th>Lương</th>"+
+            "<th>Chức vụ</th>"+"</tr>"
+    for (let i = 0; i < danhSachCN.length; i++) {
+      board+=`<tr>
+<td>${danhSachCN[i].STT}</td>
+<td>${danhSachCN[i].HoVaTen}</td>
+<td>${danhSachCN[i].NgaySinh}</td>
+<td>${danhSachCN[i].DiaChi}</td>
+<td>${danhSachCN[i].Luong}</td>
+<td>${danhSachCN[i].ChucVu}</td>
+</tr>`
+    }
+    board +="</table>"
+
+    document.getElementById("result").innerHTML=board
+  }
+
+displayTable()
+
+</script>
+</body>
+</html>

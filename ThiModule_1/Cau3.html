@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cau3</title>
+</head>
+<body>
+<script>
+      function checkNamNhuan(year) {
+        return (year % 4 === 0 && year % 100 !== 0) || year % 100 === 0 && year % 400 === 0;
+      }
+
+      let regex =/^(0[1-9]|1[0-2])\/\d{4}$/
+      let input
+
+      do {
+        input = prompt("Nhập tháng/năm((MM/YYYY)")
+        if(!input.match(regex)){
+          alert("Sai định dạng MM/YYYY,thử lại!")
+        }
+      }while(!input.match(regex))
+
+      let parts =input.split("/")
+      let month= +parts[0]
+      let year= + parts[1]
+      let days
+      switch(month){
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+          days= 31
+              break
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+          days =30
+              break
+        case 2:
+          if(checkNamNhuan(year)){
+            days=29
+          }else{
+            days =28
+          }
+          break;
+        default:
+          alert("Không có tháng này!!!")
+      }
+
+      document.writeln("Tháng "+month+"/"+year+" có "+days+" ngày")
+
+</script>
+</body>
+</html>

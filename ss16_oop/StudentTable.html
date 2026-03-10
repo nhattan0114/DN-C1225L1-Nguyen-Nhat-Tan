@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bảng Học Sinh</title>
+    <link rel="stylesheet" href="styleindex.css">
+</head>
+<body>
+<button onclick="addTeacher()">Thêm giáo viên</button>
+<button onclick="addStudent()">Thêm học sinh</button><br>
+<p id="resultStudent"></p>
+<p id="resultTeacher"></p>
+<script>
+      class Person {
+        name;
+        dob;
+        phone;
+        email;
+        address;
+
+        constructor(name, dob, phone, email, address) {
+          this.name = name
+          this.dob = dob
+          this.phone = phone
+          this.email = email
+          this.address = address
+        }
+      }
+        class Student extends Person{
+          className;
+          ID;
+          constructor(name,dob,phone,email,add,className,ID) {
+            super(name,dob,phone,email,add);
+            this.className=className
+            this.ID=ID
+          }
+      }
+
+      class Teacher extends Person{
+        exp;
+        salary;
+        TeacherCode;
+        constructor(name, dob, phone, email, address, salary,exp,code) {
+          super(name, dob, phone, email, address);
+          this.salary = salary
+          this.exp=exp
+            this.TeacherCode=code
+        }
+      }
+
+      let tan = new Student("Nguyễn Nhật Tân","14/01/2006","0399697401","nhattanlife@gmail.com","DNcity","C1225-JV05",1)
+      let minh = new Student("Nguyễn Thị Nhật Minh","28/07/2007","0348821333","nhatminhlife@gmail.com","HCMcity","C1225-JV02",2)
+      let students =[tan,minh]
+      function displayStudentTable() {
+        let board = "<table style='border: 1px solid black;width: 1000px' >"
+        board+="<tr >"+
+                "<th >ID</th>"+
+                "<th >Name</th>"+
+                "<th>DOB</th>"+
+                "<th>Phone</th>"+
+                "<th>Email</th>"+
+                "<th>Address</th>"+
+                "<th>ClassName</th>"+"</tr>"
+        for (let i = 0; i <students.length ; i++) {
+          board+=`<tr>
+<td >${students[i].ID}</td>
+<td >${students[i].name}</td>
+<td >${students[i].dob}</td>
+<td >${students[i].phone}</td>
+<td >${students[i].email}</td>
+<td '>${students[i].address}</td>
+<td >${students[i].className}</td>
+<td ><button onclick="removeStudent(${students[i].ID})">Delete</button> </td>
+</tr>`
+        }
+  board+="</table>"
+        document.getElementById("resultStudent").innerHTML=board
+      }
+      let teacher1= new Teacher("Mai Thị Hạnh","11/12/1979","0366919435","hanh@gmail.com","QueSon",17500000,21,"GV01")
+      let teacher2= new Teacher("Nguyễn Phi Hùng","10/11/1977","0978735583","hung@gmail.com","QueSon",18500000,23,"GV02")
+
+      let teachers=[teacher1,teacher2]
+      function displayTeacherTable() {
+          let board="<table style='border: 1px solid black;width: 1000px' >"
+          board+="<tr >"+
+              "<th>Teacher Code</th>"+
+              "<th >Name</th>"+
+              "<th>DOB</th>"+
+              "<th>Phone</th>"+
+              "<th>Email</th>"+
+              "<th>Address</th>"+
+              "<th>Exp</th>"+
+              "<th>Salary</th>"+
+              "</tr>"
+          for (let i = 0; i <teachers.length ; i++) {
+              board+=`<tr>
+<td>${teachers[i].TeacherCode}</td>
+<td >${teachers[i].name}</td>
+<td >${teachers[i].dob}</td>
+<td >${teachers[i].phone}</td>
+<td >${teachers[i].email}</td>
+<td >${teachers[i].address}</td>
+<td >${teachers[i].exp}</td>
+<td >${teachers[i].salary}</td>
+<td ><button onclick="removeTeacher(${i})">Delete</button> </td>
+</tr>`
+      }
+          board+="</table>"
+          document.getElementById("resultTeacher").innerHTML=board
+}
+    function addStudent() {
+      let id=+prompt("Nhập id: ")
+      let name=prompt("Nhập tên: ")
+      let dob=prompt("Nhập ngày tháng năm sinh: ")
+      let phone=prompt("Nhập số điện thoại: ")
+      let email=prompt("Nhập email: ")
+      let address=prompt("Nhập địa chỉ: ")
+      let className=prompt("Nhập lớp: ")
+      students.push(new Student(name,dob,phone,email,address,className,id))
+      displayStudentTable()
+    }
+      function addTeacher() {
+          let code=prompt("Nhập mã giáo viên: ")
+          let name=prompt("Nhập tên: ")
+          let dob=prompt("Nhập ngày tháng năm sinh: ")
+          let phone=prompt("Nhập số điện thoại: ")
+          let email=prompt("Nhập email: ")
+          let address=prompt("Nhập địa chỉ: ")
+          let exp =+prompt("Nhập số năm dạy học: ")
+          let salary=+prompt("Nhập lương: ")
+          teachers.push(new Teacher(name,dob,phone,email,address,salary,exp,code))
+          displayTeacherTable()
+      }
+
+    function removeStudent(id) {
+        for (let i = 0; i < students.length; i++) {
+            if (students[i].ID === id) {
+                let isConfirm = confirm("Xác nhận xóa học sinh" + students[i].name + " không?")
+                if (isConfirm) {
+                    students.splice(i, 1)
+                    displayStudentTable()
+                }
+                return
+            }
+        }
+    }
+
+
+        function removeTeacher(index) {
+                        teachers.splice(index,1)
+                        displayTeacherTable()
+
+
+
+        }
+
+      displayStudentTable()
+      displayTeacherTable()
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cau2</title>
+</head>
+<body>
+<script>
+    function checkPerfectNum(n) {
+        let sum=0
+        for (let i = 1; i < n; i++) {
+            if(n%i===0){
+                sum +=i
+            }
+        }
+        return sum === n
+    }
+    let input
+    do {
+        input = +prompt("Nhập số nguyên dương:")
+        if(input <=0||isNaN(input)){
+            alert("Sai dữ liệu,nhập lại!")
+        }
+    }while(input<=0||isNaN(input))
+
+    if(checkPerfectNum(input)){
+        document.writeln("True")
+    }else{
+        document.writeln("False")
+    }
+
+</script>
+</body>
+</html>
